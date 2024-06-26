@@ -49,7 +49,6 @@ Main Components:
 Set up your PostgreSQL database with the necessary schema:
 
 ```sql
-Copy code
 CREATE TABLE ticket_data (
     id SERIAL PRIMARY KEY,
     page_number INT,
@@ -68,15 +67,7 @@ python path_to_your_script.py
 
 Ensure your environment variables are set correctly or loaded using a .env file.
 
-## 6. Monitoring and Maintenance
-
-Monitor the output of your script in the terminal or redirect it to a log file for later review:
-
-```bash
-python path_to_your_script.py > path_to_log_file.log
-```
-
-## 7. Automating the Script
+## 6. Automating the Script
 
 Set up a cron job or a similar scheduler to run the script at regular intervals:
 
