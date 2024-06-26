@@ -12,9 +12,9 @@ This README outlines the setup and operation of a Python script designed to fetc
 
 Ensure Python and PostgreSQL are installed on your server or local machine. You'll also need the requests and psycopg2 libraries for Python, which can be installed using pip.
 
-´´´bash
+```bash
 pip install requests psycopg2
-´´´
+```
 
 ## 2. Configuration
 
@@ -22,14 +22,14 @@ Store your database credentials and StubHub API details in environment variables
 
 Example .env file:
 
-´´´plaintext
+```plaintext
 DB_NAME='your_database_name'
 DB_USER='your_database_user'
 DB_PASS='your_database_password'
 DB_HOST='your_database_host'
 DB_PORT='your_database_port'
 STUBHUB_URL='https://www.stubhub.com/your-specific-endpoint'
-´´´
+```
 
 ## 3. Python Script Overview
 
@@ -48,7 +48,7 @@ Main Components:
 
 Set up your PostgreSQL database with the necessary schema:
 
-´´´sql
+```sql
 Copy code
 CREATE TABLE ticket_data (
     id SERIAL PRIMARY KEY,
@@ -56,15 +56,15 @@ CREATE TABLE ticket_data (
     created_at TIMESTAMP,
     data JSONB
 );
-´´´
+```
 
 ## 5. Running the Script
 
 Execute the script from the command line:
 
-´´´
+```
 python path_to_your_script.py
-´´´
+```
 
 Ensure your environment variables are set correctly or loaded using a .env file.
 
@@ -72,18 +72,17 @@ Ensure your environment variables are set correctly or loaded using a .env file.
 
 Monitor the output of your script in the terminal or redirect it to a log file for later review:
 
-´´´bash
+```bash
 python path_to_your_script.py > path_to_log_file.log
-
-´´´
+```
 
 ## 7. Automating the Script
 
 Set up a cron job or a similar scheduler to run the script at regular intervals:
 
-´´´cron
+```cron
 0 * * * * /usr/bin/python /path_to_your_script.py
-´´´
+```
 
 This cron job runs the script at the start of every hour.
 
