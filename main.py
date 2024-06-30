@@ -59,8 +59,8 @@ def fetch_ticket_data(conn):
 def save_to_database(json_data, page_number, created_at, conn):
     cursor = conn.cursor()
     query = """
-        INSERT INTO ticket_data (page_number, created_at, data)
-        VALUES (%s, %s, %s);
+        INSERT INTO ticket_data (page_number, created_at, data, match)
+        VALUES (%s, %s, %s, 'euro 2024 final');
     """
     cursor.execute(query, (page_number, created_at, json.dumps(json_data)))
     conn.commit()
